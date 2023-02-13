@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import pages.HomePage;
+import java.time.Duration;
 
 public class BaseTests {
 
@@ -17,8 +18,9 @@ public class BaseTests {
     Opens url provided by the url variable
     Creates new Home Page object to interact with the page provided by the url
      */
-    public static void setUp() {
+    public static void setUp() throws Exception {
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(url);
         homePage = new HomePage(driver);
     }
