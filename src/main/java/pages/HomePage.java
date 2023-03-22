@@ -20,6 +20,11 @@ public class HomePage {
         return new LoginPage(driver);
     }
 
+    public RanksPage clickAboutRanks() {
+        clickLink("About Ranks");
+        return new RanksPage(driver);
+    }
+
     /*
     - Clicks a link with label specified by the linkText String
      */
