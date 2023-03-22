@@ -19,6 +19,7 @@ public class BaseTests {
     Creates new Home Page object to interact with the page provided by the url
      */
     public static void setUp() throws Exception {
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(url);
